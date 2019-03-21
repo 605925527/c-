@@ -1,0 +1,1194 @@
+hawk
+fly@skyJ
+
+用户名：vc0718
+密码：vimc_svac_&!*
+
+echo 5 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio5/direction
+echo 1 > /sys/class/gpio/gpio5/value
+mkdir /mnt/mmc
+mount -t vfat /dev/mmcblk0 /mnt/mmc
+
+sram 
+0x20000cac
+
+vmtool svr 710 --help
+//vi  sensor clock edge selection
+devmem 0x600551c0 32 0x9006CC22 
+
+H5
+root
+3p1415926
+
+cd /system/
+remount
+tftp -gr boot.img 10.0.20.172
+tftp -gr boot.img 192.168.1.99
+//代码提交
+git add xx
+git commit -m "Adjust nand partitions"
+git push origin HEAD:vc0718_128
+
+
+nanddump -f a -l 6144 -n -o -s 0 /dev/mtd2
+hexdump -C a
+
+
+//上下电dpu
+devmem  0x60051228 32 0x3a4
+devmem  0x60051228 32 0x3a5
+
+devmem  0x60051228 32 0x3a4
+devmem  0x60051228 32 0x3a2
+
+
+eth_mac -M 0B0500f0
+eth_mac -V 20300000
+eth_mac -p 071900fb
+
+
+eth_mac -p 071900fb
+
+eth_mac -M 0aa30020
+eth_mac -V 00000000
+eth_mac -p 071900fa
+
+
+product id :   07190020
+vendor id :   00000000
+module id :   00040020
+mac address :   0429b7001001
+
+
+
+eth_mac -M 0b0400e0
+eth_mac -V 30000000
+eth_mac -p 07190085
+
+
+
+#!/bin/sh
+
+ai_index=`cat /sys/vc0718p/product_id | awk '{print substr($0,1,1)}'
+if [ $ai_index -eq 0 ]; then
+        echo $ai_index
+fi
+
+ 689.553816] Error in Status 70008208
+[  689.558394] Error in Status 70008208
+[  689.561828] Error in Status 70008208
+[  689.565412] Error in Status 70008208
+[  689.569015] Error in Status 70008208
+
+[  909.590933] Error in Status 70008179
+
+#!/bin/sh
+
+vid=`cat /sys/vc0718p/product_id | awk '{print substr($0,1,1)}'`
+echo $vid
+
+
+cat /proc/slabinfo |awk 'BEGIN{sum=0;}{sum=sum+$3*$4;}END{print sum/1024/1024}'
+
+tftp -gr u-boot.bin 10.0.20.172
+nand_burn uboot u-boot.bin
+
+ifconfig eth0 192.168.1.133
+cd /tmp/
+tftp -gr nfc_recovery 10.0.20.172
+tftp -gr vc0718_nand_module.ko 10.0.20.172
+tftp -gr 1.sh 10.0.20.172
+chmod a+x nfc_recovery
+chmod a+x 1.sh
+insmod vc0718_nand_module.ko
+./1.sh
+
+ tcpdump -nN -i any -s 2000 -w 123.pcap 'host 62.25.36.43 '
+
+定位问题某一行
+addr2line 0xc001abc4 -e vmlinux -f
+arm-linux-gnueabihf-objdump -d vmlinux > 1.s
+
+
+0x60021040
+sd卡 
+使用电脑格式化成FAT文件系统
+mount -t vfat /dev/mmcblk0 /mnt/sdcard
+	
+xdg-open
+
+tftp -gr deephi_0411.tar.gz 10.0.20.172
+tftp -gr spi_test 10.0.20.172
+chmod a+x spi_test
+tftp -gr deephi_0424_zxw_4M_unterminatednew_recog_local_lib_V2.tar.gz 10.0.20.172
+./spi_test -U deephi_0424_zxw_4M_new_recog_local_lib_V2.tar.gz -i deephi_0424_zxw_4M_new_recog_local_lib_V2.tar.gz -S 2500000 -p 2090000 -c 1000
+
+3310 升级固件
+
+
+touch /tmp/closeResetISP
+
+mount -o nolock  10.0.12.195:/home/wangdazhi/rootfs/ /mnt/sdcard
+cp /mnt/sdcard/3310UPS/ /tmp -r
+cd /tmp/3310UPS/
+tftp -gr CCM3310S_H_V1.40_20180820.bin 10.0.20.172
+将要升级的cos放入/tmp下，
+将update.sh中的cos名称改完，执行update.sh
+
+ifconfig eth0 192.168.1.33
+mkdir /mnt/sdcard
+
+ifconfig eth0 192.168.1.33
+mount -o nolock  192.168.1.99:/home/lhj/work/3310/xinjie/venc1_1 /mnt/nfs
+
+
+//gdb
+mkdir /mnt/nfs
+mount -o nolock  192.168.1.99:/home/lhj/work/3310/ /mnt/nfs
+
+echo 0 > /sys/class/gpio/gpio103/value 
+echo 1 > /sys/class/gpio/gpio103/value
+
+
+
+718p 地平线
+/system/lib/libcom.so
+mv /system/lib/libsunrise.so /system/lib/libdpu.so
+
+
+
+devmem 0x60051270 32 0x80
+devmem 0x60051274 32 0x80
+devmem 0x60051278 32 0x80
+devmem 0x6005127c 32 0x80
+
+
+devmem 0x60051270 32 0x0
+devmem 0x60051274 32 0x0
+devmem 0x60051278 32 0x0
+devmem 0x6005127c 32 0x0
+
+
+./bif_tool --register -w 0xd00000f4 -v 0xa0a0a0a
+
+./bif_tool --register -r 0xd00000f4
+
+./bif_tool --register -r 0xc000020c
+./bif_tool --file -r 0x2efd200 -n 0x1fa400 -f xx.yuv
+
+dd if=/mnt/nfs/fpga_firmware_20181116120030_b230d2b1.bin of=/dev/mtdblock0
+dd if=/dev/mtdblock0 of=/mnt/nfs/fpga.bin
+
+
+查看.a文件都包含了那些文件
+ar -t xxx.a
+查看.so文件接口
+nm -D xxx.so
+
+cd /mnt/nfs/
+insmod vc0718_nand_module.ko
+
+tftp 192.168.1.99 -gr libdev.so
+
+cp /mnt/sdcard/lib/* /lib
+chmod 777 /lib/*
+cd /tmp/
+tftp -gr i2ctool 192.168.1.99
+chmod a+x i2ctool
+a
+tftp -gr libdev.so 192.168.1.99
+
+//710 colcorbar
+  vmtool svr 710 60 0x6001a808 0x5  
+
+/94/146 yaffs-bg-1
+yaffs_gross_lock.isra.2#
+
+474 hawk      2440 D    reboot -f
+nand_get_device.isra.2#
+
+
+内核 IP 路由表
+目标            网关            子网掩码        标志  跃点   引用  使用 接口
+default         192.168.1.1     0.0.0.0         UG    600    0        0 wlan0
+10.0.0.0        10.0.20.1       255.0.0.0       UG    0      0        0 eth0
+link-local      *               255.255.0.0     U     1000   0        0 wlan0
+172.16.61.0     *               255.255.255.0   U     0      0        0 vmnet8
+192.168.1.0     *               255.255.255.0   U     600    0        0 wlan0
+192.168.175.0   *               255.255.255.0   U     0      0        0 vmnet1
+➜  ~ 
+
+
+
+
+
+
+
+
+
+ifconfig eth0 hw ether A4:29:B3:51:4d:3E
+ifconfig eth0 192.168.1.187
+
+watch -n 1 ./i2ctool -d /dev/i2c-2 -a 0x1a -w 51,132 -r 1
+
+tftp -gr  192.168.1.99
+tftp -gr i2ctool 192.168.1.99
+
+
+VI 段故障调试
+echo 0 4 1 7 > /proc/sys/kernel/printk
+echo 0x40 > /proc/umap/log
+
+
+tftp -gr spi_test 192.168.1.99
+chmod a+x spi_test
+
+cp /mnt/sdcard/deephi_0901_5.3.9_capture_vimicro_V2.tar.gz .
+devmem  0x60055428 32 0x24402ff 
+devmem  0x50001008 32 0x190004
+devmem  0x60051228 32 0x3a5
+
+
+
+tftp -gr sm1_ofb_test 192.168.1.99
+chmod a+x sm1_ofb_test
+remount
+
+
+dd if=/dev/mtdblock6 of=/tmp/test bs=2048 count=4000
+4000+0 records in
+4000+0 records out
+8192000 bytes (7.8MB) copied, 1.398769 seconds, 5.6MB/s
+
+
+dd if=/tmp/vmcro of=/dev/mtdblock1 bs=2048 count=512
+4000+0 records in
+4000+0 records out
+8192000 bytes (7.8MB) copied, 0.170453 seconds, 45.8MB/s
+
+
+regw -a 0x60055080 -v 0x200037cf;
+regw -a 0x60055010 -v 0x07cf011a;
+regw -a 0x60055008 -v 0x1;
+
+regw -a 0x60055080 -v 0x20002000;                                                           
+regw -a 0x60055010 -v 0x03e7001a;                                                           
+regw -a 0x60055008 -v 0x1;
+
+cd /tmp/
+tftp -gr 1.sh 192.168.63.220
+tftp -gr ethernet_pll.sh 192.168.63.220
+
+chmod a+x 1.sh
+chmod a+x ethernet_pll.sh
+
+hexdump -c /dev/ttyS4
+./1.sh &
+./ethernet_pll.sh
+
+regr -a 0x60055080;
+regr -a 0x60055010;
+
+获取uboot的编译时间
+grep -m 1 "U-Boot 2014" /dev/mtd2
+grep -w 'U-Boot 2014' /dev/mtd2
+
+f0:4d:a2:3a:fb:a4
+
+调整DDR频率为600Mhz
+//nfs
+sudo mount -t nfs 10.0.12.195:/home/liuhaijiao/nfs /home/lhj/tftpboot
+
+mount -t nfs 10.0.12.195:/home/liuhaijiao/nfs /home/lhj/tftpboot
+
+//tftp start
+sudo service tftpd-hpa restart
+
+insmod /system/drv/mmz.ko mmz=anonymous,0,0x8A800000,328M anony=1
+insmod /system/drv/vmedia.ko devNum=2
+//网络
+ifconfig eth0 192.168.1.215  netmask 255.255.255.0 
+
+ifconfig eth0 10.0.20.243 netmask 255.255.255.0 
+tftp -p -r 11 -l /tmp/11 10.0.20.172
+
+route add default gw 192.168.1.1
+
+./bif_tool --register -w 0xc0002000 -v 0x5810e/0x5010E
+./bif_tool --register -r 0xc000020c
+./bif_tool --file -r 0x2efd00 -n 0x1fa400
+
+arm-linux-gnueabihf-gcc  bif_tool.c  -o bif_tool -L. -lbif_interface -lpthread
+
+有线（10.0.20.172）和无线（192.168.6.170）并用时，设置路由
+删除默认路由
+sudo route del default
+添加default
+sudo route add default gw 192.168.6.1
+添加访问内网的
+sudo route del default
+sudo route add default gw 192.168.6.1
+sudo route add -net 10.0.0.0/8 gw 10.0.20.1
+
+➜  Ch02 route
+内核 IP 路由表
+目标            网关            子网掩码        标志  跃点   引用  使用 接口
+default         Youku-router    0.0.0.0         UG    600    0        0 wlan0
+10.0.0.0        10.0.20.1       255.0.0.0       UG    0      0        0 eth0
+
+
+sudo route add -net 10.0.0.0 gw 10.0.20.1 netmask 255.0.0.0
+sudo route del -net 10.0.20.0 netmask 255.255.255.0	
+
+
+regw -a 0x5000a01c -v 0x8200
+regw -a 0x5000a098 -v 0x3
+nand_burn  kernel ./boot.img
+ftp://10.0.12.150
+
+ydevconfig system 0 0x60 0x36f
+ymount system
+yrm system/drv/fb.ko
+
+yrm system/boot.img
+remount
+rm /system/drv/fb.ko
+
+regw -a 0x60016504 -v 0x10
+
+dd if=aa of=2kif bs=1 count=512
+dd if=aa of=2kif bs=1 count=512 seek=512 skip=525
+dd if=aa of=2kif bs=1 count=512 seek=1024 skip=1050
+dd if=aa of=2kif bs=1 count=512 seek=1536 skip=1575
+
+dd if=/dev/mtd0 of=aa bs=2048 count=1 
+
+dd if=u-boot.bin of=/dev/mtdblock0 bs=4096 count=100 seek=16
+
+dd if=2kif of=/dev/mtdblock0 bs=2048 count=1 
+
+1,将最新的uboot写入nand uboot分区
+。
+2，将最新的uboot写入spi nor flash中
+
+3，使用eth_mac读出2kinfo的ini并备份,修改引导uboot地址，clk bypass 7404 /29700
+4,将修改后的2kinit写入2kinfo分区
+5，从/mnt/debug/nand/接口读出第一个page。
+6，用eth_mac将备份的2kini写入nand分区，
+7,将第5步读出的文件通过dd命令分离ecc和FTL，
+8，将分离出来的2kinfo写入spi nor
+
+dd if=config.img of=/dev/mtdblock0 bs=4096 count=16 seek=112
+
+cd /bin
+rm recovery_toolkit
+tftp -gr recovery_toolkit 10.0.20.172
+chmod a+x recovery_toolkit
+cd
+
+ifconfig eth0 10.0.20.235
+cd /tmp
+tftp -gr userdata.img 10.0.20.172
+nand_burn data userdata.img
+tftp -gr system.img 10.0.20.172
+nand_burn system system.img
+
+https://pan.baidu.com/s/1pLaytDL
+https://pan.baidu.com/s/1hqzUKao
+https://pan.baidu.com/s/1bngTJNx
+
+
+tftp -gr u-boot.bin 10.0.20.172
+nand_burn uboot u-boot.bin
+dd if=u-boot.bin of=/dev/mtdblock1 bs=4096 count=105
+eth_mac -o 2k.ini
+cp 2k.ini 2k.ini_bak
+修改2k.ini
+eth_mac -i 2k.inid
+echo 0 > /mnt/debubootm 0x81000000g/nand/nand_dump
+cat /mnt/debug/nand/nand_dump > aa
+tftp -pr aa 10.0.20.172
+eth_mac -i 2k.ini_bak
+分离aa
+tftp -gr 2kif 10.0.20.172
+dd if=2kif of=/dev/mtdblock0 bs=2048 count=1 
+# hexdump -C  /dev/ttyS0 
+
+
+regw -a 0x60058008 -v 0x80
+mw 0x60058008 0x80
+tftpboot 0x81000000 192.168.1.99:boot.img
+bootm 0x81000000
+tftpboot 0x81000000 10.0.20.172:boot.img
+ifconfig eth0 10.0.20.243
+
+0xd00000f4，值固定为0x0A0A0A0A
+
+./bif_tool --register -r 0xd00000f4
+
+./bif_tool --register -w 0xd00000f4 -v 0x0A0A0A0A
+tftp -gr bif.ko 192.168.1.99
+
+
+./bif_tool --register -r 0xc0002074，正确值为：0x4380780，
+如果不对，可以将BT1120接口的CLK极性反向，再次试验，
+./bif_tool --register -r 0xc0002000 --读取CLK极性配置，值为0x5810e/0x5010E
+./bif_tool --register -w 0xc0002000 -v 0x5810e/0x5010e—设置CLK极性配置。
+如果不对，可增加BT1120接口的驱动电流值，再次试验；一般情况下，clk配置不对，CP会不断地重启。
+
+判断CP接收到的视频帧的时间戳是否正确：
+./bif_tool --register -r 0xc0000390
+./bif_tool --register -r 0xc0000394
+./bif_tool --register -r 0xc0000398
+./bif_tool --register -r 0xc000039C
+读出的时间戳值格式应该为0x5A5B5C5D，
+如果不对，可以尝试交换旭日模块BT的Y与UV的高低位
+./bif_tool --register -r 0xc0002044 –读取的值为0x0/0x6
+./bif_tool --register -w 0xc0002044 -v 0x6/0x0
+
+devmem 0x60052000 32 0x80
+devmem 0x60052010 32 0x80
+devmem 0x60052014 32 0x80
+devmem 0x60052018 32 0x80
+devmem 0x6005201c 32 0x80
+devmem 0x60052020 32 0x80
+devmem 0x60052024 32 0x80
+devmem 0x60052028 32 0x80
+devmem 0x6005202c 32 0x80
+devmem 0x60052030 32 0x80
+devmem 0x60052034 32 0x80
+devmem 0x60052038 32 0x80
+devmem 0x6005203c 32 0x80
+devmem 0x60052040 32 0x80
+devmem 0x60052044 32 0x80
+devmem 0x60052048 32 0x80
+devmem 0x6005204c 32 0x80
+
+devmem 0x60052000 32 0x0
+devmem 0x60052010 32 0x0
+devmem 0x60052014 32 0x0
+devmem 0x60052018 32 0x0
+devmem 0x6005201c 32 0x0
+devmem 0x60052020 32 0x0
+devmem 0x60052024 32 0x0
+devmem 0x60052028 32 0x0
+devmem 0x6005202c 32 0x0
+devmem 0x60052030 32 0x0
+devmem 0x60052034 32 0x0
+devmem 0x60052038 32 0x0
+devmem 0x6005203c 32 0x0
+devmem 0x60052040 32 0x0
+devmem 0x60052044 32 0x0
+devmem 0x60052048 32 0x0
+devmem 0x6005204c 32 0x0
+
+
+
+cd /tmp
+tftp -gr vc0718_nand_module.ko 10.0.20.172
+cd /
+sync
+vmtool wdog 0
+killall sofia
+umount /system
+umount /data
+sync
+
+udpdump -u port 8000 -ieth0
+
+insmod vc0718_nand_module.ko
+rmmod vc0718_nand_module.ko
+
+dd if=/dev/zero of=/dev/mmcblk0 bs=4096 count=10000
+dd if=data.img of=/dev/mtdblock2 bs=4096 count=16
+dd if=boot.img of=/dev/mtdblock3 bs=4096 count=1355
+vmtool wdog 0
+//mount
+mount -o rw,remount /system
+ifconfig eth0 10.0.20.243
+
+tftp -g -r eth_mac_0x20006580  -l /tmp/eth_mac_0x20006580  192.168.1.100
+tftp -g -r mmz.ko  -l /system/drv/mmz.ko  192.168.1.100
+tftp -g -r i2cset	 -l /system/sbin/i2cset 10.0.20.172
+tftp -g -r nand_burn -l /system/sbin/nand_burn 192.168.1.100
+tftp -p -r 11 -l /tmp/11 10.0.20.172
+tftp -p -r uboot_me_crc_6 -l /tmp/uboot_me_crc_6 192.168.1.100
+
+tftp -g -r nfc_module -l /system/drv/nfc_module 192.168.1.100
+tftp -g -r vc0718_nand_module.ko -l /system/drv/vc0718_nand_module.ko 192.168.1.100
+ftftp -g -r boot.img -l /system/boot.img 10.0.20.172
+tftp -g -r eth_mac -l /tmp/eth_mac 192.168.1.100
+tftp -g -r u-boot.bin  -l /system/u-boot.bin  192.168.1.100
+tftp -g -r vc0718_aud_test.pcm  -l /system/test/vc0718_aud_test.pcm  10.0.20.172
+
+./nfc_module -w 0 0 1 1 7 0 512 0x600000 0xc00000 boot.img
+
+tftp -g -r boot.img -l /tmp/boot.img 10.0.20.172
+tftp -g -r nfc_module -l /tmp/nfc_module 10.0.20.172
+tftp -g -r vc0718_nand_module.ko -l /tmp/vc0718_nand_module.ko 10.0.20.172
+tftp -g -r u-boot.bin -l /tmp/u-boot.bin 10.0.20.172
+insmod vc0718_nand_module.ko
+chmod a+x nfc_module
+
+tftp -g -r system.img -l /tmp/system.img 192.168.1.100
+
+tftp -g -r u-boot.bin -l /tmp/u-boot.bin 192.168.1.100
+
+./nfc_module -w 0 0 1 1 7 28 512 0x600000 0xc00000 boot.img
+
+./nfc_module -w 1 1 1 1 7 8 512 0x600000 0xc00000 boot.img
+./nfc_module -w 1 1 1 1 7 8 512 0x200000 0x400000 u-boot.bin
+
+3072
+600000-0x000000c00000
+//测带宽
+nc -l -p 3333 </dev/zero
+nc -v -n 192.168.1.108 3333 >/dev/null
+
+md 0x60055080 0x20002000
+md 0x60055010 0x03e7001a
+md 0x60055008 0x1
+//tcpdump
+tcpdump -s0 host 10.0.20.172 -w sock.cap
+tcpdump -i eth0  -w sock.cap
+regw -a 0x60058008 -v 0x80
+
+tftp -pr sock.cap 192.168.1.99
+
+tftp -gr u-boot.bin 10.0.20.172
+sleep 1
+nand_burn uboot u-boot.bin
+
+mkfs.jffs2  -s 0x100 -e 0x10000 -p 0x10000 -d  data/ -o  data.img
+
+
+flash_erase /dev/mtd2 0 64
+nandwrite -n -p /dev/mtd2 boot.img
+
+
+mw 0x60058008 0x80
+tftpboot 0x81000000 192.168.1.99:boot.img
+tftpboot 0x81000000 10.0.20.172:boot.img
+tftpboot 0x81000000 192.168.0.254:uImage
+setenv ipaddr 10.0.20.238
+setenv serverip 10.0.20.172
+tftpboot 0x81000000 10.0.20.172:uImage
+bootm 0x81000000
+
+mw.b 0x81000000 0xFF 0x400000; tftp 0x81000000 uImage; nand erase 0x300000 0x400000; nand write.i 0x81000000 0x300000 0x400000
+
+/home/lhj/work/code/ti/u-boot.min.uart
+/home/lhj/work/code/ti/u-boot-720Mhz.bin
+
+//输出.a内所有的函数名
+arm-linux-none-eabi-nm xx.a >xx.txt
+
+同步最新kernel镜像
+
+liuhaijiao@server5:~/code/ti/1.apps/a-sys/trunk/dvr_rdk/av_server/src$ 
+
+//colorbar
+vc0710_test -r 1 -a 6001a808 -d 5
+
+//编译8147
+# linux kernel
+export PATH=$PATH:/home/liuhaijiao/code/ti/CodeSourcery/Sourcery_G++_Lite/bin
+make CROSS_COMPILE=arm-none-linux-gnueabi- ARCH=arm ti8148_evm_defconfig
+make CROSS_COMPILE=arm-none-linux-gnueabi- ARCH=arm uImage
+
+mw.b 0x81000000 0xFF 0x400000; tftp 0x81000000 uImage; nand erase 0x300000 0x400000; nand write.i 0x81000000 0x300000 0x400000
+
+root
+vilarroot
+
+
+nandwrite -s 0x300000 /dev/mtd3 uImage
+######################################################################
+# 编译u-boot mini nand
+# u-boot mini nand
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- distclean
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- ti8148_evm_min_nand
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- u-boot.ti 
+# 烧写u-boot mini
+mw.b 0x81000000 0xFF 0x20000; tftp 0x81000000 u-boot.min.nand; nand erase 0x0 0x20000; nand write.i 0x81000000 0x0 0x20000
+
+######################################################################
+# 编译u-boot
+# u-boot nand
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- distclean
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- ti8148_evm_config_nan开启对讲时，audio out杂音很大d
+make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- u-boot.ti
+# 烧写u-boot
+
+mw.b 0x81000000 0xFF 0x3300000;tftp 0x81000000 flashimage-ipc7396hc50v-single-20170330-v9.2.2.4.bin;nand erase 0x000000 0x8000000;nand write 0x81000000 0x000000 0x3300000
+
+mw.b 0x81000000 0xFF 0x60000; tftp 0x81000000 u-boot.bin; nand erase 0x20000 0x60000; nand write.i 0x81000000 0x20000 0x60000
+
+
+
+tftp -gr test 10.0.20.172
+tftp -gr libdload.so 10.0.20.172
+tftp -gr CCM3310S_H_COS_V0.32_init_log_iic_spi_nolog.bin 10.0.20.172
+
+tftp -gr liboperation.so.spi.no.log 10.0.20.172
+tftp -gr libskf.so 10.0.20.172
+tftp -gr skf_perform_tool_spi 10.0.20.172
+
+#!/bin/sh
+i=1;
+while [[ $i -gt 0 ]];do
+    echo $i;
+done; 
+
+dd if=/dev/zero of=/dev/mtdblock0 bs=4096 count=2048
+dd if=/dev/mtdblock0 of=aa bs=4096 count=2048
+
+
+i2ctool -d /dev/i2c-0 -a 0x61 -w 0,132,0,0,16 -r 18
+tftp -g -r sm1_ofb_test -l /tmp/sm1_ofb_test 10.0.20.172
+
+
+[root@vipcam /]# dd if=/dev/zero of=/dev/null bs=8000000 count=1000
+^C
+[root@vipcam /]# dd if=/dev/zero of=/dev/null bs=80000000 count=100
+100+0 records in
+100+0 records out
+8000000000 bytes (7.5GB) copied, 13.007875 seconds, 586.5MB/s
+
+DDR 频率
+vim board/ti/ti8148/evm.c  ddr_pll_config()
+
+arch/arm/include/asm/arch-ti81xx/clocks_ti814x.h
+#define DDR_M       (pg_val_ti814x(800, 1066))  //修改后面的值
+
+tftp -g -r test.pcm -l /system/test/test.pcm 10.0.20.172
+aplay -D hw:5,0 -t pcm -c 1 -r 8000 -f S16_LE -v /system/test/audio_src.pcm --period-size=1024
+tftp -g -r recovery_toolkit -l /bin/recovery_toolkit 10.0.20.172
+
+更改RTC时间：
+
+更改系统时间：  date 011011002018  （月日时分年）
+
+将系统时间同步到rtc中： hwclock -w
+
+//编程器读取nandflash
+.\nandtool.ext -r nand.bin
+
+aplay -D hw:5,0 -t raw -c 1 -r 8000 -f S16_LE -v /tmp/test_0x1234_audio.pcm --period-size=1024
+
+tftp -g -r test_0x1234_audio.pcm -l /tmp/test_0x1234_audio.pcm 10.0.20.172
+
+tftp -g -r test_0x0f_audio.pcm -l /system/drv/test_0x0f_audio.pcm 10.0.20.172
+ifconfig eth0 10.0.20.213 netmask 255.255.255.0 
+tftp -g -r audio.ko -l /system/drv/audio.ko 10.0.20.172
+aplay -D hw:5,0 -t raw -c 1 -r 8000 -f S16_LE -v /system/test/source/audio_src.pcm --period-size=1024
+aplay -D hw:5,0 -t raw -c 1 -r 8000 -f S16_LE -v /system/test/source/test.pcm --period-size=1024
+
+aplay -C -D hw:4,0 -t raw -c 1 -r 8000 -f S16_LE -d 15 -v /tmp/test.pcm --period-size=1024
+aplay -D hw:5,0 -t raw -c 1 -r 8000 -f S16_LE -v /tmp/test.pcm --period-size=1024
+
+./alltestcase --gtest_filter=Vc0718_Aud_Test.RecTest --gtest_param_file=source/param.ini
+./alltestcase --gtest_filter=Vc0718_Storage_Test.NorTest --gtest_param_file=source/param.ini
+
+./alltestcase --gtest_filter=Vc0718_Rs232_Test.RWTest --gtest_param_file=source/param.ini --gtest_repeat=1000
+
+
+tftp -gr deephi_0626_5.2.5_capture_vimicro_V2.tar.gz 10.0.20.172
+tftp -gr spi_test 10.0.20.172
+chmod a+x spi_test
+./spi_test -7 -i ./deephi_0627_5.2.5_capture_vimicro_V2.tar.gz -u ./deephi_0627_5.2.5_capture_vimicro_V2.tar.gz -S 12500000 -p 1048576 -c 30000 -w 30000 
+
+
+tftp -g -r vc0718_aud_test.pcm -l /system/test/vc0718_aud_test.pcm 10.0.20.172
+
+aplay -C -D hw:4,0 -t raw -c 1 -r 8000 -f S16_LE -d 15 -v /tmp/vc0718_aud_test.pcm --period-size=1024
+aplay -D hw:5,0 -t raw -c 1 -r 8000 -f S16_LE -v /tmp/vc0718_aud_test.pcm --period-size=1024
+
+
+aplay -C -D hw:4,0 -t raw -c 1 -r 8000 -f S16_LE -d 15 -v /tmp/vc0718_aud_test.pcm --period-size=1024
+aplay -D hw:5,0 -t raw -c 1 -r 8000 -f S16_LE -v /tmp/vc0718_aud_test.pcm --period-size=1024
+
+i2cget -f -y 1 0x18 64
+i2cget -f -y 1 0x18 47
+
+i2cset -f -y 1 0x18 47 0x94
+i2cset -f -y 1 0x18 64 0x94
+i2cget -f -y 1 0x1b 0x70
+
+i2cget -f -y 1 0x3c 0x09
+
+conflicts
+
+关闭710输出流
+vmtool svr 710 60 0x6001a800 0xA831018a
+升级
+
+//复位地平线
+i2cset -f -y 1 0x3c 0x09 0x0
+i2cset -f -y 1 0x3c 0x09 0x1
+/*时钟*/
+mw 0x60058008 0x80
+mw 0x6005530c 0x1990800
+
+/*reset*/
+mw 0x60055604 0x400000
+mw 0x60055610 0x200
+mw 0x60055604 0x0
+
+/*phy reset*/
+mw 0x60054010 0x11 
+mw 0x60054010 0x10
+mw 0x60054010 0x11 
+
+
+make vc0718sv_config
+make
+tftp -gr bif.ko 192.168.1.99
+
+tftp -g -r boot.img -l 0x81000000 10.0.20.172
+
+bootm 0x81000000
+
+ifconfig eth0 down
+
+cat /proc/sys/kernel/printk
+
+echo 4 4 1 7 >/proc/sys/kernel/printk
+echo 8 4 1 7 >/proc/sys/kernel/printk
+
+nanddump -p -f aa -o -l 90000 /dev/mtd6
+
+iperf 
+iperf -c node-l
+iperf -c ip
+rp
+ps -ef | grep iper
+
+cscope -Rbqk
+
+ping 10.0.20.172
+ethtool -s eth0 speed 10 duplex full autoneg on
+echo 8 4 1 7 >/proc/sys/kernel/printk
+
+ping 10.0.20.172
+
+   -s eth0 speed 100 duplex half autoneg off
+mount -t debugfs debug /sys/kernel/debug
+cat /sys/kernel/debug/gpio
+
+./myTest & 
+top | grep myTest
+
+echo -17 > /proc/457/oom_adj
+
+//close watchdog
+regw -a 0x60058008 -v 0x80
+
+tftp -gr bif.ko 192.168.1.99
+
+svn ci -m "添加以太网复位信号" cpsw.c
+regw -a 0x60030018 -v 0xffff0007
+
+regr 读网卡phy 寄存器
+             
+mw 0x60030010 0x1; md 0x60030014 1
+mw 0x60030010 0x41; md 0x60030014 1
+mw 0x60030010 0x101; md 0x60030014 1
+mw 0x60030010 0x141; md 0x60030014 1
+
+
+mw 0x60030014 0x3300; mw 0x60030010 0x3
+mw 0x60030014 0x1e1; mw 0x60030010 0x103
+
+ 
+读phy 0号寄存器（control）：
+regw -a 0x60030010 -v 0x1
+regr -a 0x60030014
+
+regw -a 0x60030014 -v 0x7000;regw -a 0x60030010 -v 0x3;
+
+
+读phy 1号寄存器（status）：
+regw -a 0x60030010 -v 0x41
+regr -a 0x60030014
+读phy 4号寄存器（adv）：
+regw -a 0x60030010 -v 0x101
+regr -a 0x60030014
+读phy 5号寄存器（ladv）：
+regw -a 0x60030010 -v 0x141
+regr -a 0x60030010
+regr -a 0x60030014
+
+读26寄存器
+regw -a 0x60030010 -v 0x681
+regr -a 0x60030010
+regr -a 0x60030014
+
+regr -a 0x60030014
+
+写phy 0号寄存器（control）：
+regw -a 0x60030014 -v 0x3300	
+regw -a 0x60030010 -v 0x3
+
+写phy 4号寄存器（adv）：
+regw -a 0x60030014 -v 0x5e1	
+regw -a 0x60030010 -v 0x103
+
+
+repo init -u ssh://10.0.12.150:29418/hawk/platform/manifest.git -b vc0718_1302
+repo sync
+repo start --all vc0718_1302
+repo forall -c 'git remote add origin ssh://10.0.12.150:29418/hawk/$REPO_PROJECT.git $@'
+
+
+
+repo forall -c 'git remote add origin ssh://10.0.12.150:29418/sw/vmai/$REPO_PROJECT.git $@'
+
+
+liuhaijiao@server5:~/code/hawk/platform/vc0718/root$ git commit -a -m "add ethtool"
+[vc0718_128 0cda4d9] add ethtool
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100755 bin/ethtool
+liuhaijiao@server5:~/code/hawk/platform/vc0718/root$ 
+liuhaijiao@server5:~/code/hawk/platform/vc0718/root$ git push origin HEAD:vc0718_128
+To ssh://10.0.12.150:29418/hawk/platform/vc0718/root.git
+ ! [rejected]        HEAD -> vc0718_128 (fetch first)
+error: failed to push some refs to 'ssh://10.0.12.150:29418/hawk/platform/vc0718/root.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+yaffs_bg_thread_fn
+yaffs_bg_gc
+yaffs_check_gc
+yaffs_write_new_chunk
+
+
+[    5.278126] [<c01bc128>] (nand_write_oob+0x0/0xf8) from [<c01b4954>] (part_write_oob+0x8c/0x9c)
+[    5.286824]  r8:00001e00 r7:cee3dd58 r6:00000000 r5:00000000 r4:00f00000
+[    5.293538] [<c01b48c8>] (part_write_oob+0x0/0x9c) from [<c012b424>] (yaffs_mtd_write+0xa8/0xe8)
+[    5.302370]  r7:00000800 r6:ced51200 r5:00000000 r4:00001e00
+[    5.308032] [<c012b37c>] (yaffs_mtd_write+0x0/0xe8) from [<c012ae3c>] (yaffs_tags_marshall_write+0xc8/0xd8)
+[    5.317845] [<c012ad74>] (yaffs_tags_marshall_write+0x0/0xd8) from [<c012a13c>] (yaffs_wr_chunk_tags_nand+0x9c/0xc4)
+[    5.328395]  r8:cedaf800 r7:00001e40 r6:cf817000 r5:cee3ded0 r4:00001e00
+[    5.335123] [<c012a0a0>] (yaffs_wr_chunk_tags_nand+0x0/0xc4) from [<c01250d0>] (yaffs_write_new_chunk+0x338/0x544)
+[    5.345515]  r9:00000001 r8:00001e40 r7:cee72bc0 r6:00000079 r5:cf817000
+[    5.352036] r4:00000040
+[    5.354681] [<c0124d98>] (yaffs_write_new_chunk+0x0/0x544) from [<c01263c4>] (yaffs_check_gc+0x924/0xbdc)
+[    5.364286] [<c0125aa0>] (yaffs_check_gc+0x0/0xbdc) from [<c0127078>] (yaffs_bg_gc+0x3c/0x60)
+[    5.372881] [<c012703c>] (yaffs_bg_gc+0x0/0x60) from [<c01218ec>] (yaffs_bg_thread_fn+0xf8/0x1ac)
+[    5.381764]  r7:ffff8cc9 r6:ffff8cca r5:ffff8cc9 r4:00000000
+[    5.387433] [<c01217f4>] (yaffs_bg_thread_fn+0x0/0x1ac) from [<c003ff7c>] (kthread+0x90/0x9c)
+[    5.396029] [<c003feec>] (kthread+0x0/0x9c) from [<c0029308>] (do_exit+0x0/0x6e0)
+[    5.403484]  r7:00000013 r6:c0029308 r5:c003feec r4:cedd5d58
+
+
+
+
+
+
+
+vc0718-uboot> md 0x60030000
+60030000: 0060c80c 00000001 00000000 00000000    ..`.............
+60030010: 000007c0 00001058 ffff0006 00000000    ....X...........
+60030020: 00001036 00000220 00000000 00000000    6... ...........
+60030030: 00000000 03e80000 00000000 00000000    ................
+60030040: 80008052 8a8e1600 0000ffff ffffffff    R...............
+60030050: 0000ffff ffffffff 0000ffff ffffffff    ................
+60030060: 0000ffff ffffffff 0000ffff ffffffff    ................
+60030070: 0000ffff ffffffff 0000ffff ffffffff    ................
+60030080: 0000ffff ffffffff 0000ffff ffffffff    ................
+60030090: 0000ffff ffffffff 0000ffff ffffffff    ................
+600300a0: 0000ffff ffffffff 0000ffff ffffffff    ................
+600300b0: 0000ffff ffffffff 0000ffff ffffffff    ................
+600300c0: 00000000 00000000 00000000 00000000    ................
+600300d0: 00000000 00000000 00000000 00000000    ................
+600300e0: 00000000 00000000 00000000 00000000    ................
+600300f0: 00000000 00000000 00000000 00000000    ................
+60030100: 00000000 00000000 00000000 00ffffff    ................
+60030110: 01ffffff 00007740 000001dd 00000000    ....@w..........
+60030120: 000001dd 000001dd 00000000 00000000    ................
+60030130: 00000000 00000000 00000000 00000000    ................
+60030140: 000001dd 00000000 00000000 00000000    ................
+60030150: 00000000 00000000 00000000 00000000    ................
+60030160: 00000000 00007740 000001dd 00000000    ....@w..........
+60030170: 000001dd 00000000 00000000 00000000    ................
+60030180: 0000016e 0000a735 0000a735 0000010e    n...5...5.......
+60030190: 00000060 00000000 00000000 00000000    `...............
+600301a0: 00000000 00000000 00000000 000000d6    ................
+600301b0: 0000005d 0000002f 00000000 00000004    ].../...........
+600301c0: 00000008 00000000 00000000 00000000    ................
+600301d0: 00000000 00000151 00000000 00000000    ....Q...........
+600301e0: 00000000 00000000 00000000 00000000    ................
+
+
+
+vc0718-uboot> md 0x60031000
+60031000: 00002084 00000000 00000000 00000000    . ..............
+60031010: 00000000 00000010 0220031c 00000000    .......... .....
+60031020: 01d20000 00000000 00110001 00000000    ................
+60031030: 00000000 00000000 00000000 00000000    ................
+60031040: 00000000 00000000 00000000 00000000    ................
+60031050: 00000000 00000000 01adef37 00000000    ........7.......
+60031060: 00000000 00000000 00000000 00000000    ................
+60031070: 00000000 00000000 00000000 00000000    ................
+60031080: 00002084 00000000 00000000 00000000    . ..............
+60031090: 00000000 00000010 0220031c 00000000    .......... .....
+600310a0: 00000000 00000000 00110001 00000000    ................
+600310b0: 00000000 00000000 00000000 00000000    ................
+600310c0: 00000000 00000000 00000000 00000000    ................
+600310d0: 00000000 00000000 01adef37 00000000    ........7.......
+600310e0: 00000000 00000000 00000000 00000000    ................
+600310f0: 00000000 00000000 00000000 00000000    ................
+
+
+
+emac_clk(0x6005530c) 0x1990800
+padc REG_PADC_EMAC_EXPHY_ADDR = 0x1, REG_PADC_EPHY_SEL_ADDR = 0x4
+Phy detect : find Phy addr 0
+Phy work in 100M Full mode
+===dump mii phy regs of GMAC: 0
+  reg: 0 value:    3100    reg: 1 value:    782d    reg: 2 value:       7    reg: 3 value:    c0f1  
+  reg: 4 value:     5e1    reg: 5 value:    4de1    reg: 6 value:       3    reg: 7 value:    ffff  
+  reg: 8 value:    ffff    reg: 9 value:    ffff    reg: a value:    ffff    reg: b value:    ffff  
+  reg: c value:    ffff    reg: d value:    ffff    reg: e value:    ffff    reg: f value:       0  
+  reg:10 value:      40    reg:11 value:       2    reg:12 value:    60e0    reg:13 value:    ffff  
+  reg:14 value:       0    reg:15 value:       0    reg:16 value:       0    reg:17 value:       0  
+  reg:18 value:    ffff    reg:19 value:    ffff    reg:1a value:       0    reg:1b value:       a  
+  reg:1c value:       0    reg:1d value:      c8    reg:1e value:       0    reg:1f value:    1058  
+
+vc0718sv-emac
+Warning: vc0718sv-emac MAC addresses don't match:
+Address in SROM is         00:55:7b:b5:7d:f7
+Address in environment is  00:16:8e:8a:52:80
+vmc_emac_linux_set_mac_address called 
+
+
+
+tcp/ip协议
+
+
+生成树协议（STP）在交换机互相通信时进行操作，数据报文以桥协议数据单元（BPDU）的形式进行交换。
+桥接协议数据单元（BPDU) 每隔2秒，BPDU报文便向所有的交换机端口发送一次，以便交换机（或网桥）能交换当前最新的拓扑信息，并迅速识别和检测其中的环路。
+
+
+
+
+
+1024+4+20
+
+
+
+
+
+
+
+
+
+lhj@lhj:~$ iperf -c 10.0.20.244 -u -m -t 60 -i 10 -b 100M
+------------------------------------------------------------
+Client connecting to 10.0.20.244, UDP port 5001
+Sending 1470 byte datagrams
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.20.172 port 38527 connected with 10.0.20.244 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-10.0 sec   114 MBytes  95.8 Mbits/sec
+[  3] 10.0-20.0 sec   114 MBytes  95.7 Mbits/sec
+[  3] 20.0-30.0 sec   114 MBytes  95.7 Mbits/sec
+[  3] 30.0-40.0 sec   114 MBytes  95.7 Mbits/sec
+[  3] 40.0-50.0 sec   114 MBytes  95.7 Mbits/sec
+[  3] 50.0-60.0 sec   114 MBytes  95.7 Mbits/sec
+[  3]  0.0-60.0 sec   685 MBytes  95.7 Mbits/sec
+[  3] Sent 488453 datagrams
+
+
+ cscope -Rbq
+:csadd /home/wooin/vim71/cscope.out /home/wooin/vim71
+
+
+
+# nc -l -p 3333 </dev/zero
+[  160.497481] VMC_EMAC: vmc_emac_linux_xmit_frames No More Free Tx Descriptors
+[  173.585148] VMC_EMAC: vmc_emac_linux_xmit_frames No More Free Tx Descriptors
+
+
+
+
+
+nfc 异常
+
+regr -a 0x5000a000 -s 238
+        R : REG[0x5000a000] = 0x00000009
+        R : REG[0x5000a004] = 0x00000000
+        R : REG[0x5000a008] = 0x0000000f
+        R : REG[0x5000a00c] = 0x00000076
+        R : REG[0x5000a010] = 0x0000dc87
+        R : REG[0x5000a014] = 0x00000000
+        R : REG[0x5000a018] = 0x00000073
+        R : REG[0x5000a01c] = 0x0001c200
+        R : REG[0x5000a020] = 0x8ed5c000
+        R : REG[0x5000a024] = 0x8ed5c800
+        R : REG[0x5000a028] = 0x10803000
+        R : REG[0x5000a02c] = 0x00e00585
+        R : REG[0x5000a030] = 0x0215313f
+        R : REG[0x5000a034] = 0x00000000
+        R : REG[0x5000a038] = 0x00000000
+        R : REG[0x5000a03c] = 0x70000000
+        R : REG[0x5000a040] = 0x000000c0
+        R : REG[0x5000a044] = 0x00000000
+        R : REG[0x5000a048] = 0x00000000
+        R : REG[0x5000a04c] = 0x00000000
+        R : REG[0x5000a050] = 0x00000000
+        R : REG[0x5000a054] = 0x00000000
+        R : REG[0x5000a058] = 0x00000000
+        R : REG[0x5000a05c] = 0x00000000
+        R : REG[0x5000a060] = 0x00000000
+        R : REG[0x5000a064] = 0x00000000
+        R : REG[0x5000a068] = 0x00000000
+        R : REG[0x5000a06c] = 0x00000000
+        R : REG[0x5000a070] = 0x00000000
+        R : REG[0x5000a074] = 0x00000000
+        R : REG[0x5000a078] = 0x00000000
+        R : REG[0x5000a07c] = 0x00000000
+        R : REG[0x5000a080] = 0x00000000
+        R : REG[0x5000a084] = 0x00000000
+        R : REG[0x5000a088] = 0x00000000
+        R : REG[0x5000a08c] = 0x00000000
+        R : REG[0x5000a090] = 0x00000000
+        R : REG[0x5000a094] = 0x00000000
+        R : REG[0x5000a098] = 0x00000001
+        R : REG[0x5000a09c] = 0x07070707
+        R : REG[0x5000a0a0] = 0x000000c0
+        R : REG[0x5000a0a4] = 0x000000d0
+        R : REG[0x5000a0a8] = 0x00000000
+        R : REG[0x5000a0ac] = 0x00000001
+        R : REG[0x5000a0b0] = 0x00000000
+        R : REG[0x5000a0b4] = 0x00000000
+        R : REG[0x5000a0b8] = 0x00000000
+        R : REG[0x5000a0bc] = 0x000001ff
+        R : REG[0x5000a0c0] = 0x00000001
+        R : REG[0x5000a0c4] = 0x00000004
+        R : REG[0x5000a0c8] = 0x00000003
+        R : REG[0x5000a0cc] = 0x00000000
+        R : REG[0x5000a0d0] = 0xffffffff
+        R : REG[0x5000a0d4] = 0x00000001
+        R : REG[0x5000a0d8] = 0x00000000
+        R : REG[0x5000a0dc] = 0x00000000
+        R : REG[0x5000a0e0] = 0x00000000
+        R : REG[0x5000a0e4] = 0x00000000
+        R : REG[0x5000a0e8] = 0x00000000
+
+
+
+VM ware workstation 
+
+1. open linux_eda.ovf 
+
+2. start linux_EDA
+
+3. restart linux_EDA
+
+00:50:56:38:08:17
+
+手动修改VMware workstation 的虚拟机的MAC地址
+
+用文本工具（UE）打开vmx配置文件，然后修改以下两行：
+　
+1. ethernet0.generatedAddress = "00:0c:29:1c:35:cc"
+　　
+2. uuid.bios = "56 4d e0 c4 a2 41 24 1b-5b 6e 4b a0 0b 1c:35:cc"
+　　
+注释：
+　　
+其中 00:0c:29: 不能够修改
+　　
+1c:35:cc可以修改
+
+
+
+之后登陆linux；用户名是klin，密码是kinglin
+
+1.在VMWare里面先修改网络适配器配置，00：0C：29：48：FE：9B
+2.关闭VMWare
+3.在Linux_EDA.vmx修改
+uuid.bios = "56 4d e0 c4 a2 41 241b-5b 6e 4b a0 0b 1c 35 cc"
+4.确认eth0 MAC地址
+ethernet0.generatedAddress ="00:0c:29:48:fe:9b"
+5.打开Linux_EDA,登陆klin查看是否显示eth0
+6.没有的话登陆root账号，键入ifup eth0，可以先看一下ifconfig –a看看是否名字为eth0,不是的话需要更改ethx为eth0。
+7.没有出现错误的话switch user。使用linux_EDA tool就没有问题了。
+
+//生成4x4的随机数组
+random.rand(4, 4)
+//将数组转化为矩阵
+mat()
+r a n d M a t = m a t ( r a n d o m . r a n d ( 4 , 4 ) )
+//
+
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim中 :BundleInstall 安装插件
+
+
+33. USB设备的枚举过程？
+(1) Get Device Descriptor。主机的第一个命令要求得到设备描述符，此SETUP 包为8 个字节数据（80，06，00，01，00，00，40，00），发向地址0，端口0。“40”表示返回数据长度最大为40H 个字节。实际上，只返回一个包，即数组DEV_DESC[ ]中的前8 个字节，用于说明设备的描述符的真实长度和设备的类型。
+(2) Set Address。接着是设置设备地址处理事件，主机发送一个含有指定地址的数据包（00，05，02，00，00，00，00，00），在主机只有一个USB 设备的时候，这个地址一般会是2，最大地址127，USB 协议中可以连接127 个设备。设置地址事件处理结束后，设备进入地址状态，主机以后会在新的指定地址处访问设备。
+(3) Get Device Descriptor。主机再次发送请求得到设备描述符的数据包（80，06，00，01，00，00，12，00），与上次不同的是，要求的数据的长度是实际的数据长度，同时是发送到Set Address命令所设置的地址。
+(4) 读取全部Configuration Descriptor。接着主机要求得到设备全部的配置描述符、接口描述符和节点描述符（80，06，00，02，00，00，40，00），由于主机不知道设备描述符的真实长度，因此它要求得到64个字节。
+(5) Set Interface，主机发送数据包（01，0B，00，00，00，00，00，00），设置接口值为0。
+(6) Set Conifguration，确定USB设备工作在哪一个配置下。对于U盘设备来说，一般只有1个配置值，其值为01。主机发送数据包（00，09，01，00，00，00，00，00）。
+(7) 如果以上步骤都正确，主机将找到新设备，并且配置成功，该设备可以正常使用，可以进行后续的U盘枚举过程了。
+(8) 用busHound观察计算机对于U盘的枚举过程，发现上述步骤后还有一个GetMaxLun的操作，但是实际上对于U盘来说忽略该步骤也没有问题。
+
+ifconfig eth0 add 2001::34f2/64
+ifconfig eth0 del 2001::34f2/64
+
+[hawk@Vimicro /]#devmem 0x60054024 32 0x305    //使能3310复位
+[ 1100.710000] usb 2-1: new high-speed USB device number 2 using vmc-ehci
+[ 1100.860000] usb-storage 2-1:1.0: USB Mass Storage device detected
+[ 1100.870000] scsi host0: usb-storage 2-1:1.0
+[ 1101.870000] scsi 0:0:0:0: Direct-Access     Generic  Flash Disk       1.00 PQ: 0 ANSI: 4
+[ 1101.880000] sd 0:0:0:0: [sda] 4294967295 512-byte logical blocks: (2.19 TB/1.99 TiB)
+[ 1101.890000] sd 0:0:0:0: [sda] Test WP failed, assume Write Enabled
+[ 1101.890000] sd 0:0:0:0: [sda] Cache data unavailable
+[ 1101.900000] sd 0:0:0:0: [sda] Assuming drive cache: write through
+[ 1101.920000]  sda: sda1
+[ 1101.920000] sd 0:0:0:0: [sda] Attached SCSI removable disk
+
+[hawk@Vimicro /]#
+
+
+# [  294.302187] usb 2-1: new high-speed USB device number 3 using vmc-ehci
+[  294.453405] EHCI IRQ Fix:a001 , 8001, a001
+[  294.464703] scsi1 : usb-storage 2-1:1.0
+[  295.463198] scsi 1:0:0:0: Direct-Access     VIMICRO  SUPER DISK       1.00 PQ: 0 ANSI: 0 CCS
+[  295.480136] sd 1:0:0:0: [sda] 1049124 512-byte logical blocks: (537 MB/512 MiB)
+[  295.497371] sd 1:0:0:0: [sda] Write Protect is off
+[  295.503369] sd 1:0:0:0: [sda] No Caching mode page present
+[  295.508770] sd 1:0:0:0: [sda] Assuming drive cache: write through
+[  295.519240] sd 1:0:0:0: [sda] No Caching mode page present
+[  295.526110] sd 1:0:0:0: [sda] Assuming drive cache: write through
+[  295.535893]  sda: unknown partition table
+[  295.544121] sd 1:0:0:0: [sda] No Caching mode page present
+[  295.550814] sd 1:0:0:0: [sda] Assuming drive cache: write through
+[  295.557460] sd 1:0:0:0: [sda] Attached SCSI removable disk
+
+# lsusb 
+Bus 002 Device 003: ID 0ac8:8820
+Bus 001 Device 001: ID 1d6b:0002
+Bus 002 Device 001: ID 1d6b:0002
+
+
+devmem 0x60054024 32 0x30
+
+
+bootargs console=ttyS0,115200 mem=${mem} ddr=${ddr} rdinit=/sbin/init nandcfg=nandcfg:2k,64,1024,1,8,48,1,1,0,0,7,0 mtdparts=nand_mtdparts:1m(infor),1m(rombbt),2m(uboot),1m(ubootinfor),1m(ubootenv),6m(boot),98m(system),17m(userdata),1m(bbt) pid=${pid} vmc_emac_ether.mac=${mac} ip=${ipaddr}::${gatewayip}:${netmask}:ubuntu:eth0:off recovery=${recovery} HWVER=${HWVER} MPDATE=${MPDATE} sn=${SN}
+
+
+console=ttyS0,115200 mem=256M rdinit=/sbin/init nandcfg=nandcfg:2k,64,1024,1,8,48,1,1,0,0,7,0 mtdparts=nand_mtdparts:1m(infor),1m(rombbt),1m(uboot),1m(ubootinfor),4m(ubootenv),6m(boot),96m(system),16m(userdata),1m(bbt)
+
